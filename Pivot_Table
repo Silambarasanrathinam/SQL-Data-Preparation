@@ -1,0 +1,9 @@
+select * from(
+select data,year,agg from tbl
+)
+pivot (
+    sum(agg)
+    for year IN ('2015','2016','2017')
+)
+order by 1
+)
